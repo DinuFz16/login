@@ -1,0 +1,90 @@
+<!doctype html>
+
+<html>
+<head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<script>
+    $(document).ready(function(){
+
+        $('#zz').click(function()
+        {
+          console.log("event captured")
+            if (typeof(Storage) !== "undefined") {
+    if (localStorage.clickcount) {
+      localStorage.clickcount = Number(localStorage.clickcount)+1;
+    } else {
+      localStorage.clickcount = 1;
+    }
+    document.getElementById("result").innerHTML =  localStorage.clickcount ;
+  } else {
+    document.getElementById("result").innerHTML = "Sorry, your browser does not support web storage...";
+  }
+
+
+        });
+
+        $('#ii').click(function(){
+
+if (typeof(Storage) !== "undefined") {
+if (localStorage.clickcount) {
+localStorage.clickcount = Number(localStorage.clickcount)+1;
+} else {
+localStorage.clickcount = 1;
+}
+document.getElementById("results").innerHTML =  localStorage.clickcount ;
+} else {
+document.getElementById("results").innerHTML = "Sorry, your browser does not support web storage...";
+}
+
+});
+
+
+        
+        
+    });
+
+  
+  
+
+</script>
+</head>
+
+
+<body>
+
+    <div class="up">
+
+ <button id="zz" type="button" class="btn btn-default btn-sm">
+
+          <span class="glyphicon glyphicon-thumbs-up"></span>LIKE <div id="result"></div>
+  
+        </button>
+        
+    
+
+    
+
+            <button id="ii" type="button" class="btn btn-default btn-sm">
+
+                    <span class="glyphicon glyphicon-thumbs-down"></span>DISLIKE <div id="results"></div>
+            
+                  </button>
+                  
+
+    </div>
+    
+<!-- <p><button onclick="clickCounter()" type="button"><span class="glyphicon glyphicon-thumbs-up"></span>  <div id="result"></div></button></p>
+
+
+<p><button onclick="clickCounters()" type="button">disLike  <div id="results"></div></button></p>
+<p>Click the button to see the counter decrease.</p> -->
+
+
+
+</body>
+
+</html>
